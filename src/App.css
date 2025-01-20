@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+  margin: 0;
+}
+
+.projectHeader {
+  font-family: 'Kanit', sans-serif;
+  color: #000000;
+  font-size: 35px;
+}
+
+
+.Maps {
+  width: 75%;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.satMap {
+  width: 40%;
+  height: 100%;
+  background-image: url(./Maps/satMap.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border: 3px solid #283618;
+  border-radius: 10px;
+}
+
+.outMap {
+  width: 40%;
+  height: 100%;
+  background-image: url(./Maps/outlineMap.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border: 3px solid #283618;
+  border-radius: 10px;
+
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+  padding: 10px;
+  background-color: #fefae0;
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+  height: 100px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  gap: 10px;
+  font-family: 'Cabin', sans-serif;
+}
+
+.formButton {
+  height: 30px;
+  width: 60x;
+  border: 2px solid #606c38;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sourceForm {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.destinationForm {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sourceInput {
+  width: 140px;
+  border: 2px solid #a3b18a;
+}
+
+.destinationInput {
+  width: 140px;
+  border: 2px solid #a3b18a;
+
+}
+
+.emptyBox {
+  color: black;
+}
+
+.projectDisplay {
+  width: 400px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
