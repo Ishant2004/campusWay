@@ -25,16 +25,23 @@ const App = () => {
     const a = e.target[0].value;
     const b = e.target[1].value;
     try {
-      const response = await fetch(`http://localhost:5000/shortd/${a}/${b}`);
+      // Use relative URL for API requests to work in both development and production
+      const response = await fetch(`/shortd/${a}/${b}`);
       const jsonData = await response.json();
       setData(jsonData);
+
+      // Only display the route if we successfully got data
+      setDisplay(true);
+      e.target[0].value = "";
+      e.target[1].value = "";
     } catch (error) {
       console.error("Error:", error);
-    }
+      // Show user-friendly error message
+      alert("An error occurred while fetching the path. Please try again.");
 
-    setDisplay(true);
-    e.target[0].value = "";
-    e.target[1].value = "";
+      // Don't display the route if there was an error
+      setDisplay(false);
+    }
   };
 
   return (

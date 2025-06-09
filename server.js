@@ -7,9 +7,9 @@ const app = express();
 // Serve static files from the React app's build directory in production
 app.use(express.static(path.join(__dirname, 'build')));
 
-// Enable CORS for development
+// Enable CORS for all environments
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: process.env.NODE_ENV === 'production' ? '*' : 'http://localhost:3000'
 }));
 
 app.get('/', (req, res) => {
@@ -177,7 +177,13 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// Start the server only in development mode or when not on Vercel
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+// Export the Express app for Vercel serverless functions
+module.exports = app;
