@@ -2,7 +2,7 @@
 - It's a basic navigation project that identifies the shortest distance and optimal travel route between two points on the IITG campus map.
   
 <img src="images/1.png" > <img src="images/2.png">
-<img src"/images/1.png">
+<img src="/images/1.png">
 ## Installation Guide
 ### Requirements
 - Node.js
